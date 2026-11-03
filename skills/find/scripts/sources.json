@@ -1,0 +1,29 @@
+{
+  "_doc": "Registry of places to look for existing skills, plugins and MCP servers. Each entry names an adapter `type` implemented in search.py; add a source by adding an entry, add a new kind of source by adding an adapter. `ttl_hours` applies to list-type sources that are cached and matched locally; search-type sources are queried live.",
+  "sources": [
+    {"name": "installed", "type": "installed", "enabled": true,
+     "_why": "What is already on this machine. Checked first so we never fetch something we have."},
+
+    {"name": "skills.sh", "type": "skills_sh", "enabled": true,
+     "_why": "Vercel's cross-agent skill directory. Search API with install counts: the best usage signal available."},
+
+    {"name": "plugin-marketplaces", "type": "marketplace", "enabled": true, "ttl_hours": 24,
+     "local_known": true,
+     "repos": ["anthropics/claude-plugins-official", "anthropics/skills"],
+     "_why": "Claude Code plugin marketplaces: every marketplace registered locally plus any listed here."},
+
+    {"name": "goodailist", "type": "goodailist", "enabled": true, "ttl_hours": 24,
+     "keywords": ["Skills", "Claude Code", "MCP"],
+     "_why": "Chip Huyen's daily-updated ranking of ~23k AI repos. Tags are noisy; useful for star velocity (star_7d)."},
+
+    {"name": "awesome-lists", "type": "awesome_list", "enabled": true, "ttl_hours": 24,
+     "repos": ["ComposioHQ/awesome-claude-skills", "travisvn/awesome-claude-skills", "hesreallyhim/awesome-claude-code"],
+     "_why": "Human-curated lists. Parsed for GitHub links with their one-line descriptions."},
+
+    {"name": "mcp-registry", "type": "mcp_registry", "enabled": true,
+     "_why": "Official MCP server registry. Use when the need is a tool/integration rather than a procedure."},
+
+    {"name": "github-skill-files", "type": "github_code", "enabled": true, "max_results": 15,
+     "_why": "Long tail: any public SKILL.md matching the query. No curation; lean on stars."}
+  ]
+}

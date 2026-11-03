@@ -1,0 +1,8 @@
+{
+  "name": "reuse",
+  "version": "0.1.0",
+  "description": "Before building a skill, plugin or MCP server, search public registries (skills.sh, plugin marketplaces, goodailist, awesome-lists, the MCP registry, GitHub) for one that already exists, and decide adopt, adapt, or build.",
+  "author": {"name": "Mike Beaumier", "url": "https://github.com/Jollyhrothgar"},
+  "repository": "https://github.com/Jollyhrothgar/reuse-plugin",
+  "license": "MIT"
+}

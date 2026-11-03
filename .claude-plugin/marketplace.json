@@ -1,0 +1,9 @@
+{
+  "name": "reuse-plugin",
+  "description": "The reuse Claude Code plugin, installable on its own.",
+  "owner": {"name": "Mike Beaumier", "url": "https://github.com/Jollyhrothgar"},
+  "plugins": [
+    {"name": "reuse", "source": "./",
+     "description": "Before building a skill, plugin or MCP server, search public registries for one that already exists, and decide adopt, adapt, or build."}
+  ]
+}
