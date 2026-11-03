@@ -18,8 +18,9 @@ claude plugin install reuse@reuse-plugin
 - **Hook.** A `UserPromptSubmit` hook matches prompts like "make a skill…",
   "create an MCP server…" and tells Claude to run `reuse:find` before
   `skill-creator`.
-- **Skill description.** During autonomous work, `reuse:find` fires when
-  Claude is about to build a reusable capability.
+- **Session hook.** A `SessionStart` hook adds a standing instruction: before
+  building any reusable capability during autonomous work, run `reuse:find`.
+  The skill's description backs this up.
 - **Manually.** Run `/reuse:find <what you need>`.
 
 ## Sources

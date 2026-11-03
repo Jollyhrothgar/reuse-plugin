@@ -3,7 +3,23 @@
     "UserPromptSubmit": [
       {
         "hooks": [
-          {"type": "command", "command": "python3 -I \"${CLAUDE_PLUGIN_ROOT}/hooks/skill_request.py\"", "timeout": 5}
+          {
+            "type": "command",
+            "command": "python3 -I \"${CLAUDE_PLUGIN_ROOT}/hooks/skill_request.py\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|clear",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -I \"${CLAUDE_PLUGIN_ROOT}/hooks/session_start.py\"",
+            "timeout": 5
+          }
         ]
       }
     ]
