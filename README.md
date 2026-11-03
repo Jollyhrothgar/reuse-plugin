@@ -42,7 +42,8 @@ parallel. Duplicates are merged and results ranked by keyword match, usage
 List-type sources are cached for 24h in `~/.cache/reuse-find/`.
 
 To add a source, add an entry to `sources.json`. To add a new *kind* of
-source, write one adapter function in `search.py`.
+source, write one adapter function in `search.py`. [CONTRIBUTING.md](CONTRIBUTING.md)
+walks an agent through either one, including tests and what a PR needs.
 
 ```bash
 python3 -I skills/find/scripts/search.py "extract tables pdf" --kind skill --limit 10
